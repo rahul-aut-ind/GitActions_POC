@@ -29,11 +29,11 @@ jobs: # different jobs run parallelly by default. To make it sequencial, need to
       id: version
       uses: paulhatch/semantic-version@v4.0.1
       with:
-        tag_prefix: "v"
+        #tag_prefix: "v"
         #change_path: "tfw-web/src"
         bump_each_commit: true
         short_tags: false
-        format: "${tag_prefix}${major}.${minor}.${patch}-prerelease${increment}"
+        format: "v${major}.${minor}.${patch}-prerelease${increment}"
         
     - name: Print new semantic build number
       run: echo ${{ steps.version.outputs.version }}
