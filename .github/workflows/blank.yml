@@ -33,7 +33,7 @@ jobs: # different jobs run parallelly by default. To make it sequencial, need to
         #change_path: "tfw-web/src"
         bump_each_commit: true
         short_tags: false
-        format: "v${major}.${minor}.${patch}-prerelease${increment}"
+        format: "v${major}.${minor}.${patch}-${increment}"
         
     - name: Print new semantic build number
       run: echo ${{ steps.version.outputs.version }}
