@@ -33,18 +33,18 @@ jobs: # different jobs run parallelly by default. To make it sequencial, need to
         #change_path: "tfw-web/src"
         bump_each_commit: true
         short_tags: false
-        format: "${major}.${minor}.${patch}-prerelease${increment}"
+        format: "${tag_prefix}${major}.${minor}.${patch}-prerelease${increment}"
         
     - name: Print new semantic build number
       run: echo ${{ steps.version.outputs.version }}
         
-    - name: Generate build number
-      uses: einaregilsson/build-number@v3
-      with:
-        token: ${{secrets.github_token}}    
+#     - name: Generate build number
+#       uses: einaregilsson/build-number@v3
+#       with:
+#         token: ${{secrets.github_token}}    
         
-    - name: Print new build number
-      run: echo "Build number is $BUILD_NUMBER"
+#     - name: Print new build number
+#       run: echo "Build number is $BUILD_NUMBER"
 
 #     - name: Set up JDK 1.8
 #       uses: actions/setup-java@v1
